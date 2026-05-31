@@ -55,6 +55,8 @@ The Tesla Model 3/Y infotainment system (Intel Atom MCU) runs a Linux-based OS w
 
 ## Obtaining Root + Persistence
 
+*Full reports: [Root Shell via ODIN](01-ROOT-SHELL-VIA-ODIN.md) | [Log Backshell + DV Access](04-LOG-BACKSHELL-AND-DV-ACCESS.md)*
+
 The ODIN diagnostic interface exposes a task called `TEST_DIGITAL-MICS_X_FUNCTIONAL-CHECK` that accepts a `MicTest-Input` parameter — a list of strings passed directly to `CID_EXEC` for execution as root. Any subscriber with the lowest Toolbox access level (`tbx-external`) can trigger this task by connecting to the car's diagnostic port and sending a POST request. The input strings are executed verbatim, so the attack is two requests: first, download a reverse shell script onto the car via curl:
 
 ```json
@@ -95,19 +97,19 @@ The full persistence toolkit is controlled through the car's Access Code input b
 
 ## Independent Findings
 
-### Expired ODIN Tokens + NTP Spoofing (CVE-2022-42007)
+### [Expired ODIN Tokens + NTP Spoofing](02-EXPIRED-ODIN-TOKENS.md) (CVE-2022-42007)
 
 Tesla's ODIN token generation endpoint accepts expired `tbx-tokens` and — critically — also returns the user's `tbx-token` in the response, enabling token leakage through sharing. Expired ODIN tokens are normally rejected by the vehicle, but by spoofing the car's NTP time source using ARP-based interception ([ntpspoof.py](tools/ntpspoof.py)), the vehicle can be tricked into accepting tokens past their expiration date. The gateway detects NTP tampering (`GTW_w149_rtcTimeSetInPast`) but does not act on this signal.
 
-### Upload to Mothership
+### [Upload to Mothership](03-UPLOAD-TO-MOTHERSHIP.md)
 
 Using the car's certificates from `/var/lib/car_creds/`, the `hermes_proxy` service can be started on a local machine, providing direct access to Tesla's Mothership server. The profile backup endpoint (`/vehicles/${VIN}/computer_profile`) accepts arbitrary file uploads with no validation — a single curl command uploads any file to Tesla's production infrastructure. Tesla marked this finding as N/A ("working as intended").
 
-### Insurance Telemetry Spoofing
+### [Insurance Telemetry Spoofing](05-INSURANCE-TELEMETRY-SPOOFING.md)
 
 Tesla's Safety Score system collects driving telemetry from the MCU and uploads it to Mothership for insurance premium calculations. With root access, a perfect-score telemetry sample can be captured, its protobuf-encoded odometer values inflated via hex editing (using the reverse-engineered schema at [telemetry.proto](tools/telemetry.proto)), and the modified samples re-uploaded. Two fabricated trips were accepted by Mothership — one showing ~2,700 miles in 3.5 hours — directly reducing monthly insurance premiums from $130 to $83. The fundamental issue is that telemetry originates from the MCU (user-accessible) rather than the APE3 autopilot unit (hardened). Tesla did not issue a bounty for this finding.
 
-### ODIN Authentication Bypass
+### [ODIN Authentication Bypass](06-UNFUSE-ODIN.md)
 
 With root access, bind-mounting a fake `is-fused` script over `/usr/bin/is-fused` and restarting the ODIN services causes ODIN to believe the unit is in factory/development mode. In this state, any ODIN task can be executed without authentication tokens — including tasks that could disable the car alarm (`PROC_ICE_X_SET-DATA-VALUE`), wipe the VIN (`PROC_ICE_X_DEASSOCIATE-PRODUCT-ID`), or potentially engage safety-critical vehicle functions.
 
