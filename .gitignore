@@ -1,0 +1,14 @@
+.DS_Store
+*.pdf
+*.docx
+*.rtf
+*.key
+*.crt
+*.pem
+*.pub
+id_rsa*
+id_dsa*
+*-cert.pub
+__pycache__/
+*.pyc
+.env

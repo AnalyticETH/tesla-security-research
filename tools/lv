@@ -1,0 +1,15 @@
+#!/bin/sh
+
+PORT=8082
+HOST=cid
+
+command=$1
+
+if [ "$command" == "" ]; then
+  echo "Syntax: lv <name>"
+  exit
+fi
+
+BASEDIR=$(dirname "$0")
+
+socat tcp:$HOST:$PORT EXEC:"bash $BASEDIR/send.sh '{\"method\":\"get_data_value\",\"params\":[{\"name\":\"$command\"}]}' 'get_data_value'"

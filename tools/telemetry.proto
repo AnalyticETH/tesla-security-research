@@ -1,0 +1,60 @@
+//To decode:
+//$ dd if=825f21be-a2d1-446c-be31-edc8af25700a skip=1 bs=7 | protoc --decode TisDriveRecord telemetry.proto -I.
+
+syntax = "proto3";
+
+message TisDriveRecord {
+  // This is the telemetry insurance drive records used for safety score.
+  // "user" fields are when autopilot/acc/cruise are not engaged. The non _user
+  // fields include AP and non-AP time.
+
+  // Fields >21 - added for 2021.32.22
+
+  string drive_record_id = 1;
+
+  // version 5 as of 2021.32.21
+  int64 drive_record_version = 2;
+
+  string firmware_version = 3;
+  int64 driver_profile = 4;
+  string driver_profile_name = 5;
+  int64 start_epoch_ms = 6;
+  int64 end_epoch_ms = 7;
+  string timezone = 8;
+  int64 drive_time_ms = 9;
+  double start_odometer = 10;
+  double end_odometer = 11;
+  int64 autosteer_strike_out_count = 12;
+  int64 lane_departure_count = 13;
+  double accel_long_variance_weighted = 18;
+  int64 delivered = 19;
+  int64 service_mode = 20;
+
+  int64 abs_event_count = 15;
+  int64 user_abs_event_count = 21;
+  int64 abs_brake_10mph_event_count = 22;
+
+  int64 forward_collision_count = 14;
+  // not sure why there's a new field, are there non-forward collision warnings?
+  int64 collision_warning_count = 27;
+
+  // time to car in front
+  int64 ms_in_headway_0_to_1_s = 16;
+  int64 ms_in_headway_1_to_3_s = 17;
+  int64 ms_in_headway_0_to_1_s_user = 28;
+  int64 ms_in_headway_1_to_3_s_user = 29;
+
+  // braking only
+  int64 long_accel_1_mps2_ms = 23;
+  int64 long_accel_3_mps2_ms = 24;
+  int64 long_accel_1_mps2_ms_user = 30;
+  int64 long_accel_3_mps2_ms_user = 31;
+
+  // left/right
+  int64 lat_accel_2_mps2_ms = 25;
+  int64 lat_accel_4_mps2_ms = 26;
+  int64 lat_accel_2_mps2_ms_user = 32;
+  int64 lat_accel_4_mps2_ms_user = 33;
+
+  double distance_non_ap = 34;
+}
