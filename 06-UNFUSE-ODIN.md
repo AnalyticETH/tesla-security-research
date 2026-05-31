@@ -1,13 +1,15 @@
 # Bind-mount Fake is-fused Script to Use ODIN Without Authentication
 
-**CVE:** Rejected
-**CWE:** CWE-807 (Reliance on Untrusted Inputs in a Security Decision)
-**Submitted:** November 19, 2021
-**Affected:** Tesla Model 3/Y (Intel MCU), likely Model S/X
-**Kernel:** Linux ice 4.14.235-PLK #1 SMP PREEMPT (x86_64)
-**Firmware:** 2021.32.22
-**Status:** No fix confirmed (no CVE issued)
-**Reward:** No reward issued
+| | |
+|---|---|
+| **CVE** | — |
+| **CWE** | CWE-807 (Reliance on Untrusted Inputs in a Security Decision) |
+| **Submitted** | November 19, 2021 |
+| **Affected** | Tesla Model 3/Y (Intel MCU), likely Model S/X |
+| **Kernel** | Linux ice 4.14.235-PLK #1 SMP PREEMPT (x86_64) |
+| **Firmware** | 2021.32.22 |
+| **Status** | No fix confirmed |
+| **Reward** | No reward issued |
 
 ## Testing Environment
 

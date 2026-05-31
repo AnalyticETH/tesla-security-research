@@ -1,13 +1,15 @@
 # Upload any File to Mothership via Profile Backup Service
 
-**CVE:** None (Tesla marked N/A — "working as intended")
-**CWE:** CWE-434 (Unrestricted Upload of File), CWE-862 (Missing Authorization)
-**Submitted:** September 4, 2021
-**Affected:** Tesla Mothership server (tested on Model 3, likely all vehicles)
-**Kernel:** Linux ice 4.14.235-PLK #1 SMP PREEMPT (x86_64)
-**Firmware:** 2021.24.4
-**Status:** Marked N/A by Tesla
-**Reward:** No reward issued
+| | |
+|---|---|
+| **CVE** | None (Tesla marked N/A — "working as intended") |
+| **CWE** | CWE-434 (Unrestricted Upload of File), CWE-862 (Missing Authorization) |
+| **Submitted** | September 4, 2021 |
+| **Affected** | Tesla Mothership server (tested on Model 3, likely all vehicles) |
+| **Kernel** | Linux ice 4.14.235-PLK #1 SMP PREEMPT (x86_64) |
+| **Firmware** | 2021.24.4 |
+| **Status** | Marked N/A by Tesla |
+| **Reward** | No reward issued |
 
 ## Testing Environment
 

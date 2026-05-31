@@ -1,13 +1,15 @@
 # Persistent Backshell and Data Value Access via Log Config Hijack and Prototype Server
 
-**CVE:** [CVE-2022-42005](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-42005) (persistent log shell), [CVE-2022-42006](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-42006) (prototype server data value access)
-**CWE:** CWE-269 (Improper Privilege Management), CWE-284 (Improper Access Control)
-**Submitted:** October 3, 2021
-**Affected:** Tesla Model 3/Y (Intel MCU), likely Model S/X
-**Kernel:** Linux ice 4.14.235-PLK #1 SMP PREEMPT (x86_64)
-**Firmware:** 2021.32.22 (persists across firmware updates)
-**Status:** Fixed
-**Reward:** Bugcrowd bounty
+| | |
+|---|---|
+| **CVE** | [CVE-2022-42005](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-42005) (persistent log shell), [CVE-2022-42006](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-42006) (prototype server data value access) |
+| **CWE** | CWE-269 (Improper Privilege Management), CWE-284 (Improper Access Control) |
+| **Submitted** | October 3, 2021 |
+| **Affected** | Tesla Model 3/Y (Intel MCU), likely Model S/X |
+| **Kernel** | Linux ice 4.14.235-PLK #1 SMP PREEMPT (x86_64) |
+| **Firmware** | 2021.32.22 (persists across firmware updates) |
+| **Status** | Fixed |
+| **Reward** | Bugcrowd bounty |
 
 ## Testing Environment
 

@@ -1,13 +1,15 @@
 # Providing Fake Insurance Telemetry (Safety Score) Data
 
-**CVE:** Rejected
-**CWE:** CWE-345 (Insufficient Verification of Data Authenticity)
-**Submitted:** November 19, 2021
-**Affected:** Tesla Model 3/Y (Intel MCU), likely Model S/X
-**Kernel:** Linux ice 4.14.235-PLK #1 SMP PREEMPT (x86_64)
-**Firmware:** 2021.32.22
-**Status:** No fix confirmed (no CVE issued). As of the August 2023 blog publication, while the protobuf definitions had changed, the underlying architecture (telemetry submitted from the MCU rather than the autopilot unit) had not.
-**Reward:** No reward issued
+| | |
+|---|---|
+| **CVE** | — |
+| **CWE** | CWE-345 (Insufficient Verification of Data Authenticity) |
+| **Submitted** | November 19, 2021 |
+| **Affected** | Tesla Model 3/Y (Intel MCU), likely Model S/X |
+| **Kernel** | Linux ice 4.14.235-PLK #1 SMP PREEMPT (x86_64) |
+| **Firmware** | 2021.32.22 |
+| **Status** | No fix confirmed. As of the August 2023 blog publication, while the protobuf definitions had changed, the underlying architecture (telemetry submitted from the MCU rather than the autopilot unit) had not. |
+| **Reward** | No reward issued |
 
 ## Testing Environment
 
@@ -120,7 +122,7 @@ This vulnerability allows anyone with root access to submit fake telemetry data 
 
 This unjustly decreases Tesla's revenue from their insurance business, makes their insurance model calculations less accurate, and may amount to insurance fraud by the exploiter.
 
-None of the researchers reporting this vulnerability use Tesla insurance, nor would we perform any action which could constitute insurance fraud.
+None of the researchers reporting this vulnerability use Tesla insurance, nor would any perform any action which could constitute insurance fraud.
 
 ## Recommendations
 

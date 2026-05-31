@@ -1,13 +1,15 @@
 # Generate and Use Expired ODIN Tokens
 
-**CVE:** [CVE-2022-42007](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-42007)
-**CWE:** CWE-613 (Insufficient Session Expiration), CWE-294 (Authentication Bypass by Capture-replay)
-**Submitted:** September 4, 2021
-**Affected:** Tesla Toolbox API + all Tesla vehicles
-**Kernel:** Linux ice 4.14.235-PLK #1 SMP PREEMPT (x86_64)
-**Firmware:** 2021.24.4
-**Status:** Fixed in firmware 2021.32.10
-**Reward:** Bugcrowd bounty (TBX3-7577)
+| | |
+|---|---|
+| **CVE** | [CVE-2022-42007](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-42007) |
+| **CWE** | CWE-613 (Insufficient Session Expiration), CWE-294 (Authentication Bypass by Capture-replay) |
+| **Submitted** | September 4, 2021 |
+| **Affected** | Tesla Toolbox API + all Tesla vehicles |
+| **Kernel** | Linux ice 4.14.235-PLK #1 SMP PREEMPT (x86_64) |
+| **Firmware** | 2021.24.4 |
+| **Status** | Fixed in firmware 2021.32.10 |
+| **Reward** | Bugcrowd bounty (TBX3-7577) |
 
 ## Testing Environment
 

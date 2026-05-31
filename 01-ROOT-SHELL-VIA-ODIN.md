@@ -1,13 +1,15 @@
 # Root Shell via ODIN Digital Mics Test
 
-**CVE:** [CVE-2022-42008](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-42008)
-**CWE:** CWE-78 (OS Command Injection)
-**Submitted:** September 4, 2021
-**Affected:** Tesla Model 3/Y (Intel MCU), likely Model S/X
-**Kernel:** Linux ice 4.14.235-PLK #1 SMP PREEMPT (x86_64)
-**Firmware:** 2021.24.4 (100% success rate)
-**Status:** Fixed in firmware 2021.32.10
-**Reward:** Bugcrowd bounty (SW-343214)
+| | |
+|---|---|
+| **CVE** | [CVE-2022-42008](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-42008) |
+| **CWE** | CWE-78 (OS Command Injection) |
+| **Submitted** | September 4, 2021 |
+| **Affected** | Tesla Model 3/Y (Intel MCU), likely Model S/X |
+| **Kernel** | Linux ice 4.14.235-PLK #1 SMP PREEMPT (x86_64) |
+| **Firmware** | 2021.24.4 (100% success rate) |
+| **Status** | Fixed in firmware 2021.32.10 |
+| **Reward** | Bugcrowd bounty (SW-343214) |
 
 ## Testing Environment
 
